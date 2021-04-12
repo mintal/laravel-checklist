@@ -56,6 +56,7 @@ class ChecklistController extends Controller
 
             $checklist->save();
         } catch (ValidationException $e) {
+            dd($e);
             //todo: handle exception
         }
 
