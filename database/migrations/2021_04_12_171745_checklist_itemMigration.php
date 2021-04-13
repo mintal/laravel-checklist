@@ -14,7 +14,7 @@ class ChecklistItemMigration extends Migration
             $table->boolean('completed')->default(false);
 			$table->timestamps();
 
-            $table->foreignId('checklists_id')->constrained();
+            $table->foreignId('checklist_id')->constrained();
 		});
 	}
 

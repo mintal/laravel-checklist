@@ -4,8 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\Checklist */
-class ChecklistResource extends JsonResource
+/** @mixin \App\Models\ChecklistItem */
+class ChecklistItemResource extends JsonResource
 {
 	/**
 	 * @param \Illuminate\Http\Request $request
@@ -17,7 +17,7 @@ class ChecklistResource extends JsonResource
 			'id' => $this->id,
 			'name' => $this->name,
 			'completed' => $this->completed,
-			'items' => ChecklistItemResource::collection($this->items)
+            'parent_id' => $this->checklist_id
 		];
 	}
 }
